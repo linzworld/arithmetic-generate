@@ -7,7 +7,7 @@ import java.util.*;
  * @author: chenyu
  * @date: 2020/4/3 9:58
  */
-public class FileUtile {
+public class FileUtils {
 
     /**
      * 将题目写入文件中
@@ -17,7 +17,7 @@ public class FileUtile {
      *       map :题目
      *@return
      **/
-    public  static void writeTitle(PrintWriter printWriter, Map<String,Integer> map){
+    public  static void writeTitle(PrintWriter printWriter, Map<String,String> map){
         Set<String> titles=map.keySet();
         int i=1;
         for(String title:titles){
@@ -29,11 +29,11 @@ public class FileUtile {
 
 
     //将答案写入文件中
-    public static void  writeAnswer(PrintWriter printWriter,Map<String,Integer> map){
+    public static void  writeAnswer(PrintWriter printWriter,Map<String,String> map){
         Set<String> answer=map.keySet();
         int i=1;
         for (String key :answer){
-            Integer value=map.get(key);
+            String value=map.get(key);
             printWriter.println(i+":"+value);
             i++;
         }
@@ -41,7 +41,7 @@ public class FileUtile {
 
 
     //比较学生答案和标准答案
-    public static void compare(String filePath,Map<String,Integer> map,int number) throws IOException {
+    public static void compare(String filePath,Map<String,String> map,int number) throws IOException {
         FileReader fileReader=new FileReader(filePath);
         BufferedReader br=new BufferedReader(fileReader);
         //存储学生答案
@@ -58,11 +58,11 @@ public class FileUtile {
         }
         br.close();
         fileReader.close();
-        Iterator<Map.Entry<String,Integer>> it = map.entrySet().iterator();
+        Iterator<Map.Entry<String,String>> it = map.entrySet().iterator();
         for (int k=0;k<number;k++){
-            Map.Entry<String,Integer> entry=it.next();
+            Map.Entry<String,String> entry=it.next();
 
-            if(entry.getValue() ==Integer.parseInt(answer[k])){
+            if(entry.getValue().equals(answer[k])){
                 right.add(k+1);
             }else {
                 wrong.add(k+1);
