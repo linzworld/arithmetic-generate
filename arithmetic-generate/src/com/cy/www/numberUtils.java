@@ -7,11 +7,10 @@ import java.util.Map;
  * @date: 2020/4/3 9:16
  */
 public class numberUtils {
-
     /**
      * 将一个分数转为带分数
      *@author chenyu
-     *@param  a是分子b是分母
+     *@param  a 是分子b是分母
      *@date 9:30 2020/4/3
      *@return
      **/
@@ -30,8 +29,6 @@ public class numberUtils {
             return a+"/"+b;
         }
     }
-
-
 
 
 
