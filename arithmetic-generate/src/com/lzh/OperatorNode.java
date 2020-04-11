@@ -15,4 +15,11 @@ public class OperatorNode extends Node {
         super(null, left, right, 0);
         this.operator = operator;
     }
+
+
+    //中间节点存放运算符，需空格隔开
+    @Override
+    public String toString() {
+        return " " + operator + " ";
+    }
 }

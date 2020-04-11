@@ -22,7 +22,7 @@ public class numberUtils {
                 return c+"";
             }
             else {
-                return c+","+d+"/"+b;
+                return c + "'" + d + "/" + b;
             }
         }
         else{

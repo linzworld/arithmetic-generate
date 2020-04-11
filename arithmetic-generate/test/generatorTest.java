@@ -3,6 +3,10 @@ import com.lzh.Fraction;
 import com.lzh.GenerateUtils;
 import org.junit.Test;
 
+import java.util.HashMap;
+
+import static com.lzh.GenerateUtils.generateMap;
+
 /**
  * @Description
  * @Author 林泽鸿
@@ -23,6 +27,13 @@ public class generatorTest {
     @Test
     public void changeNumber() {
         System.out.println(numberUtils.changeNumber(24, 12));
+    }
+
+    @Test
+    public void generator() {
+        HashMap hashMap = generateMap(1000, 20);
+        System.out.println(hashMap);
+        System.out.println(hashMap.size());
     }
 
 

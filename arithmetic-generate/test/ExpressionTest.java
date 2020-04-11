@@ -1,4 +1,5 @@
 import com.cy.www.numberUtils;
+import com.lzh.Expression;
 import com.lzh.Node;
 import org.junit.Test;
 
@@ -25,4 +26,30 @@ public class ExpressionTest {
         System.out.print("删除头尾空白 :");
         System.out.println(Str.trim());
     }
+
+    @Test
+    public void print() {
+
+        for (int i = 0; i < 10; i++) {
+            Expression expression = new Expression(3, 10);
+            System.out.println(expression);
+
+        }
+    }
+
+    @Test
+    public void result() {
+
+        for (int i = 0; i < 1; i++) {
+            Expression expression = new Expression(1, 10);
+
+            System.out.println(expression);
+            System.out.println(expression.getRoot().result);
+            System.out.println(expression.getRoot().result);
+
+        }
+    }
+
+
+
 }
